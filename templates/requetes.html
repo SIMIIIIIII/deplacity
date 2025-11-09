@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Requêtes</title>
+    <link rel="stylesheet" href="../static/requetes.css" />
+    <link rel="stylesheet" href="../static/style1.css" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <div class="box">
+        <form method="post" action="{{ url_for('requete.request_by_city') }}" id="CityForm">
+
+            <select name="ville" class="selectpicker form-control" onchange="this.form.submit()">
+                <option value=''>Choisir une ville</option>
+                {% for city in cities %}
+                <option value='{{city.nom_de_ville}}'>{{city.nom_de_ville}}</option>
+                {% endfor %}
+            </select>
+        </form>
+        {% if streets %}
+        <form method="post" action="{{url_for('requete.request_by_street')}}" id="StreetForm">
+            <select name="rue" class="selectpicker form-control" onchange="this.form.submit()">
+                <option value=''>Choisir une rue</option>
+                {% for rue in streets %}
+                <option value='{{rue[0]}}'>{{rue[0]}}</option>
+                {% endfor %}
+            </select>
+        </form>
+        {% endif %}
+    </div>
+    <div class="tableau" >
+        {% if streets %}
+        <table>
+            <tr>
+                <td>
+                    <h2>{{info_city.nom_de_ville}}</h2>
+                    <p>Code Postal: {{info_city.code_postal}}</p>
+                    <p>Population: {{info_city.population}} habitants</p> </br>
+                    {% if days %}
+                    </br><p>Rue: <strong>{{chosen_street}} </strong></p>
+                    {% endif %}
+
+                <td><img src="{{logos[info_city['nom_de_ville']]}}" class="imageprofil">
+                </td>
+            </tr>
+        </table>
+        {% endif %}
+    </div>
+
+    {% if proportions %}
+    <div class = "box">
+        <form method="post" action="{{url_for('requete.request_by_city_year')}}" id="StreetForm">
+            <select name="year" class="selectpicker form-control" onchange="this.form.submit()">
+                <option value=''>Par annee</option>
+                {% for year in list_years %}
+                <option value='{{year}}'>{{year}}</option>
+                {% endfor %}
+            </select>
+        </form>
+        {% if months %}
+        <form method="post" action="{{url_for('requete.request_by_city_month')}}" id="StreetForm">
+            <select name="month" class="selectpicker form-control" onchange="this.form.submit()">
+                <option value=''>Par mois</option>
+                {% for month in months %}
+                <option value='{{month}}'>{{month}}</option>
+                {% endfor %}
+            </select>
+        </form>
+        {% endif %}
+    </div>
+    <div class="tableau">
+        <table>
+            <tr class="titles">
+                <th>Proportion trafique</th>
+                <th>Les jours de pleine lune</th>
+            </tr>
+            <tr class="{{ theme }}">
+                <td>
+                    <div class="requetecities">
+                        <div id="proportions" style="display: none;">{{ proportions|safe }}</div>
+                        <canvas id="requete_city"></canvas>
+                        <script type="module" src="{{ url_for('static', filename='charFiles/grafic_city.js') }}"></script> 
+                    </div>
+                </td>
+                <td>
+                    <div class="requetecities">
+                        <div id="moons" style="display: none;">{{ moons|safe }}</div>
+                        <canvas id="moon_city"></canvas>
+                        <script type="module" src="{{ url_for('static', filename='charFiles/grafic_moon.js') }}"></script> 
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    {% endif %}
+
+    {% if days %}
+    <div class="tableau">
+    
+        <table>
+            <tr></tr>
+            <tr class="titles">
+                <th>Jour de la semaine</th>
+                <th>Piétons</th>
+                <th>Cyclistes</th>
+                <th>Voitures</th>
+                <th>Voitures Lourdes</th>
+            </tr> </br>
+            <tr></tr>
+
+            {% for day in days.keys() %}
+            <tr class="{{ theme }}">
+                <td>{{ day }}</td>
+                <td class="td1">{{ days[day]['pieton'] }}</td>
+                <td class="td1">{{ days[day]['velo'] }}</td>
+                <td class="td1">{{ days[day]['voiture'] }}</td>
+                <td class="td1">{{ days[day]['lourd'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+
+    <div class="box3">Copyright &copy 2023</div>
+</body>
+</html>

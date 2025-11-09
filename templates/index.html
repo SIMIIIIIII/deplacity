@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style1.css" />
+    <link rel="stylesheet" href="../static/requetes.css" />
+    <title>Page d'acceuil</title>
+  </head>
+  <body>
+    {% include 'header.html' %}
+    <div class="parent">
+      <div class="box2">
+        <div class="sec1">
+          <img src="{{ url_for('static', filename='photos/foto_ville.jpg') }}">
+        </div>
+        <div class="sec2">
+          <div class="head">
+            <h1>MON PROJET</h1>
+          </div>
+          <div class="description">
+            <p>
+              Cette application proportionne des outils d'analyse de données statistiques compréhensible.
+              Les Utilisateurs peuvent exploiter les fonctionnalités pour s'informer et faire
+              des décisions pratiques.
+            </p>
+            <br />
+            <h4>Ce qu'on offre:</h4>
+            <div class="three">
+              <div class="three1">
+                <img class="three-img1" src="https://th.bing.com/th/id/R.f498d98de7d786e51f1888b797959496?rik=Qh3zDBN475hEiA&pid=ImgRaw&r=0">
+                <p class="d">Collecte de données détaillées</p>
+              </div>
+
+              <div class="three2">
+                <img
+                  class="three-img2"
+                  src="https://th.bing.com/th/id/OIP.9pHtchLHCZwq11Hn2SNAMAHaHa?rs=1&pid=ImgDetMain">
+                <p class="d">Analyse du cyclisme dans la rue.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box3">Copyright &copy 2023</div>
+  </body>
+</html>

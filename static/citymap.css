@@ -1,0 +1,38 @@
+.donnee {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    margin: 20px;
+}
+
+.custom-form {
+    width: 80%;
+    height: 500px;
+}
+
+.donnee form div {
+    margin-bottom: 15px;
+}
+
+.donnee form label {
+    display: inline-block;
+    width: 50px; 
+    margin-right: 10px;
+    text-align: right;
+}
+
+.donnee form input[type="text"] {
+    width: 400px;
+    height: 35px;
+}
+
+.donnee form button {
+    padding: 10px 25px;
+    margin-left: 65px;
+    cursor: pointer;
+}
+
+#map {
+    height: 750px;
+    width: 100%;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style1.css" />
+    <link rel="stylesheet" href="../static/requetes.css" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Admin</title>
+  </head>
+  <body>
+    {% include 'header.html' %}
+    <div class="box1">
+        <a href="{{ url_for('admin.city_list') }}">
+            <h3>{{msg}}</h3>
+        </a>
+    </div>
+    {% if villes%}
+    <div class="tableau">
+        <table>
+            <tr>
+                <th>Postal code</th>
+                <th>Name</th>
+                <th>Population</th>
+            </tr>
+            {% for city in cities %}
+            <tr>
+                <td>{{ city.code_postal }}</td>
+                <td>{{ city.nom_de_ville }}</td>
+                <td>{{ city.population }}</td>
+                <td><a href="{{ url_for('admin.city_delete', postal_code=city.code_postal) }}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}  
+    <div class="box1">
+            <h3> Ajouter une ville</h3>
+    </div>
+    <div class="tableau">
+        <form method="post" action="{{ url_for('admin.city_create') }}">
+            <div>
+                <label for="postal_code">Postal code: </label>
+                <input name="postal_code" id="postal_code" type="text" />
+            </div>
+            <div>
+                <label for="name">Name: </label>
+                <input name="name" id="name" type="text" />
+            </div>
+            <div>
+                <label for="population">Population : </label>
+                <input name="population" id="population" type="text" />
+            </div>
+            <div>
+                <button type="submit">Add a city </button>
+            </div>
+        </form>
+        </div>  
+  </body>
+</html>

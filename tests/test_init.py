@@ -1,0 +1,38 @@
+import os
+import tempfile
+import unittest
+
+import sys
+from deplacity import create_app
+from deplacity.utils.db import get_db, close_db
+
+class TestUser(unittest.TestCase):
+
+    def setUp(self):
+        self.db_fd, self.db_path = tempfile.mkstemp()
+        
+        self.app = create_app({'TESTING': True, 'DATABASE': self.db_path})
+        self.app_context = self.app.app_context()
+        self.app_context.push()
+        self.db = get_db()
+        self.client = self.app.test_client()
+        
+        with open(
+            os.path.join(os.path.dirname(__file__),
+                         "schema_test.sql"), "rb") as f:
+            self.db.executescript(f.read().decode("utf8"))
+
+    def tearDown(self):
+        close_db()
+        os.close(self.db_fd)
+        os.unlink(self.db_path)
+    
+    def test_init_route(self):
+        routes = ["/ourteam", '/dikete']
+
+        for i in routes:
+            response = self.client.get(i)
+            self.assertEqual(response.status_code, 200)
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

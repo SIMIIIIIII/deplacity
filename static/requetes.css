@@ -1,0 +1,177 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #bdbdc5;
+    font-family: 'Copperplate Gothic';
+}
+
+nav{
+    width: 100%;
+    color: white;
+    background-color: #9899ab;
+    position: sticky;
+    top: 0px;
+
+}
+nav ul{
+    list-style-type: none;
+}
+nav ul li{
+    float: left;
+    gap: 1em;
+    width: 25%;
+    font-weight: 700;
+    text-align: center;
+    position: sticky;
+
+}
+
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+    font-weight: bold;
+}
+nav a:hover{
+    color: white;
+    border-bottom: 2px solid white;
+    font-weight: 900;
+}
+
+
+select{
+    padding: 3px;
+
+    border: solid;
+    width: 220px;
+    height: 50px;
+    text-align: center;
+    font-weight: 900;
+    border-radius: 20px;
+    transition: all 0.3s ease-in;
+    background-color: #cbcdf2;
+    box-shadow: 5px 5px 3px;
+
+}
+
+select:hover {
+    transform: translateY(-3px);
+    background-color: #d9daea;
+    width: 223px;
+    height: 55px;
+
+}
+
+select option{
+    transition: all 0.3s;
+    height: 50px;
+    width: 220px;
+
+}
+
+.villes {
+    margin: 4px;
+    padding: 30;
+
+}
+
+.rues {
+    margin: 4px;
+    padding: 30;
+
+}
+
+.box{
+    height: 100px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: #818293 ;
+}
+
+.footer {
+    font-weight: bold;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    left: 40%;
+    right: 40%;
+}
+.tableau{
+    display: flex;
+    justify-content: center;
+}
+table {
+
+    background-color: white;
+    width: 75%;
+    height: 120px;
+    text-align: center;
+    border: 2px solid ;
+    border-radius: 14px;
+    box-shadow: 5px 5px 3px;
+}
+
+table th{
+    width: 20%;
+}
+
+.td1{
+    background-color: #b9bcf5;
+    border-radius: 14px;
+}
+
+.td2{
+    background-color: #adafd8;
+    border-radius: 14px;
+}
+
+
+
+.titre{
+    width: 60px;
+}
+
+.rq_villes tr{
+    width: 25%;
+}
+
+.tab {
+    width: 80px;
+}
+
+.enre {
+    width: 200px;
+}
+
+.top3 {
+    width: 200px;
+}
+
+.menu ul {
+    display: flex; 
+    justify-content: space-around; 
+  }
+  
+  @media screen and (max-width: 768px) {
+    .menu ul {
+      flex-direction: column; 
+      align-items: center; 
+    }
+  }
+
+.requetecities {
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    padding: 20px;
+}

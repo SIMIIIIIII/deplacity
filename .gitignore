@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Flask
+instance/
+*.sqlite
+*.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+
+# Environment variables
+.env
+.flaskenv
+
+# Logs
+*.log
+
+# Node modules (for frontend dependencies)
+node_modules/
+package-lock.json
+
+# Build files
+.parcel-cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Statistiques</title>
+    <link rel="stylesheet" href="../static/style2.css" />
+    <link rel="stylesheet" href="../static/statistique.css" />
+    <link rel="stylesheet" href="../static/style1.css" />
+
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <div class="box1">
+        <h1>Statistiques</h1>
+    </div>
+    <div class="box1">
+        <h2>Nombre d'entrées par table</h2>
+    </div>
+    <div class="tableau">   
+        <div>
+            <table class="rq_villes">
+                <tr class="titles">
+                    <th class="tab">Ville</th>
+                    <th class="tab">Rue</th>
+                    <th class="tab">Vitesse</th>
+                    <th class="tab">V85</th>
+                    <th class="tab">Trafic</th>
+                </tr>
+
+                <tr>
+                    <td class="tab">{{ entree["ville"] }}</td>
+                    <td class="tab">{{ entree["rue"] }}</td>
+                    <td class="tab">{{ entree["vitesse"] }}</td>
+                    <td class="tab">{{ entree["v85"] }}</td>
+                    <td class="tab">{{ entree["trafic"] }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="box1">
+        <h2>Les villes enregistées dans la base de données</h2>
+    </div>
+
+    <div class="tableau" >
+        <div>
+            <table class="rq_villes">
+                <tr class="titles">
+                    <th class="enre">Code Postal</th>
+                    <th class="enre">Ville</th>
+                    <th class="enre">Population</th>
+                    <th class="enre">Nombre de rues</th>
+                </tr>
+
+                {% for city,street in datas %}
+                <tr>
+                    <td class="tab">{{ city.code_postal }}</td>
+                    <td class="tab">{{ city.nom_de_ville }}</td>
+                    <td class="tab">{{ city.population }}</td>
+                    <td class="tab">{{ street }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <div class="box1">
+        <h2>Top 3 de villes les plus cyclables</h2>
+    </div>
+    <div class="tableau" >
+        
+        <div>
+            <table class="rq_villes">
+                <tr class="titles">
+                    <th class="top3">Ville</th>
+                    <th class="top3">Population</th>
+                    <th class="top3">Nombre de vehicules</th>
+                </tr>
+                
+                {% for ville in top3 %}
+                <tr>
+                    <td class="top3">{{ville.nom_de_ville}}</td>
+                    <td class="top3">{{ville.population}}</td>
+                    <td class="top3">{{ville.total_vehicules}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <div class="box3">Copyright &copy 2023</div>
+</body>

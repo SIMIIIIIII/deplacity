@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style2.css" />
+    <link rel="stylesheet" href="../static/requetes.css" />
+    <link rel="stylesheet" href="../static/style1.css" />
+
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.css"
+    />
+
+    <title>Notre équipe</title>
+  </head>
+  <body>
+    {% include 'header.html' %}
+
+    <div class="responsive-container-block outer-container">
+      <div class="responsive-container-block inner-container">
+        <p class="text-blk section-head-text">Notre Équipe</p>
+
+        <div class="responsive-container-block">
+          <div class="swiper team-swiper">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <div class="card">
+                  <div class="img-wrapper">
+                    <a href="/dikete">
+                    <img
+                      src="{{ url_for('static', filename='photos/Simeon.jpg') }}"
+                    />
+                    </a>
+                  </div>
+                  <div class="card-content">
+                    <p class="text-blk name">Simeon</p>
+                    <p class="text-blk position">CEO</p>
+                    <p class="text-blk testimonial">Gestionnaire du code</p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="swiper-pagination container-block"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".team-swiper", {
+        // Optional parameters
+        slidesPerView: "auto",
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
+    <div class="box3">Copyright &copy 2023</div>
+  </body>
+</html>

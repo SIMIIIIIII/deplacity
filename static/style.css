@@ -1,0 +1,49 @@
+.imageprofil{
+    height: 250px;
+    width: 250px;
+    margin-left: 20;
+    margin-right: 50;
+    background-color: white;
+}
+
+.imageabout{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-left: 20;
+    margin-right: 50;
+    background-color: white;
+}
+
+.formulaire {
+    background: gray;
+    padding: 60px 0;
+    text-align:center;
+
+}
+
+.titre {
+    color: white;
+    background-color: rgb(50, 50, 50);
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.simtitre {
+    color: white;
+    background-color: rgb(50, 50, 50);
+    text-align: center;
+    padding: 20px 0;
+}
+
+.profiltext {
+    background-color: rgb(173, 194, 194);
+    text-align: center;
+    padding: 40px 0;
+    margin: 0;
+}
+
+.titre h2 {
+    margin: 0;
+}

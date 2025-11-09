@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SIMEON</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="../static/style1.css" />
+    <link rel="stylesheet" href="../static/requetes.css" />
+    <link rel="stylesheet" href="../static/style.css" />
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="simtitre">
+        <img src="{{ url_for('static', filename='photos/Simeon.jpg') }}" alt="Simeon image" class="imageprofil">
+    </div>
+    <div><p></p></div>
+    <div class="simtitre">
+        <h2> SIMEON  D.  LAMA</h2>
+    </div>
+    <div class="profiltext">
+        <p>
+            Je m'appele Simeon Dikete Lama. Je suis un etudiant en science informatique en bac 1.
+            Ceci est mon premier projet web avec flask, javacript et sql. Je suis entrain d'apprendre ces merveilleux outils de programmation.
+        </p>
+        <p>
+            J'ai pris un plaisir à créer ce site web qui va vous aider à avoir un aperçu sur la mobilité dans les villes belges
+            et leurs populations.
+        </p>
+        <p>
+            Souscrivez à ma Newsletter ci-bas avec votre adresse éléctronique pour rester informer des nouvelles mis à jours et autres actualités.
+        </p>
+        <p>
+            ***
+        </p>
+    </div>
+    <div class="formulaire">
+        <p>
+            <label><h2>Souscrire à ma Newsletter</h2></label>
+        </p>
+        <form>
+            <input type="text" value="exempe@email.com" style="font-size: 15px;">
+            <input type="submit" style="font-size: 15px;">
+        </form>
+    </div>
+    <div><p></p></div>
+    <div class="box3">Copyright &copy 2023</div>
+</body>
+</html>

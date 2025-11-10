@@ -9,6 +9,7 @@ dist/
 build/
 *.whl
 DEPLOYMENT.md
+RAILWAY_DEPLOYMENT.md
 
 # Virtual Environment
 .venv/

@@ -1,5 +1,5 @@
-from deplacity.utils.moon_utils import (age, phase, MoonPhase)
-from deplacity.utils.db import get_db
+from ..utils.moon_utils import (age, phase, MoonPhase)
+from ..utils.db import get_db
 from datetime import datetime
 
 def biker_in_city(city: str):

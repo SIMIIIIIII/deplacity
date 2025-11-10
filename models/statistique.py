@@ -1,5 +1,5 @@
-from deplacity.utils.db import get_db
-from deplacity.models.city import get_city_list
+from ..utils.db import get_db
+from .city import get_city_list
 
 def entrees():
     """pre:: -

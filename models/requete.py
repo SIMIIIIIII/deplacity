@@ -1,5 +1,5 @@
 from datetime import datetime
-from deplacity.utils.db import get_db
+from ..utils.db import get_db
 
 def search_trafic_city(city: str, year = None, month = None):
     """

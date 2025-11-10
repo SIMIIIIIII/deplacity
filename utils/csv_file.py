@@ -1,5 +1,5 @@
 import csv
-from deplacity.utils.db import get_db
+from .db import get_db
 import os
 
 def read_csv_file():

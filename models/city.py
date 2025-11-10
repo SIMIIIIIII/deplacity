@@ -1,4 +1,4 @@
-from deplacity.utils.db import get_db
+from ..utils.db import get_db
 
 def get_city_list():
     """

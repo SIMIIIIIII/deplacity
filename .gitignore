@@ -8,6 +8,7 @@ __pycache__/
 dist/
 build/
 *.whl
+DEPLOYMENT.md
 
 # Virtual Environment
 .venv/
@@ -40,6 +41,12 @@ htmlcov/
 
 # Logs
 *.log
+
+# Data files (don't upload large CSVs to git)
+# Deplacity.csv
+
+# Render deployment
+.render/
 
 # Node modules (for frontend dependencies)
 node_modules/

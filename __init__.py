@@ -5,9 +5,15 @@ from flask import Flask, render_template
 def create_app(test_config=None):
     instance_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'instance')
     app = Flask(__name__, instance_path=instance_path, instance_relative_config=True)
+    
+    # Get configuration from environment variables (for production) or use defaults
+    secret_key = os.environ.get('SECRET_KEY', 'dev')
+    database_url = os.environ.get('DATABASE_URL')
+    
     app.config.from_mapping(
-        SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'Deplacity.sqlite')
+        SECRET_KEY=secret_key,
+        DATABASE=os.path.join(app.instance_path, 'Deplacity.sqlite'),
+        DATABASE_URL=database_url  # PostgreSQL URL for production
     )
 
     from .blueprints import statistique, requete, home, admin, citymap

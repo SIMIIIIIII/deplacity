@@ -1,10 +1,13 @@
 import os
 import sys
 
-# Add the current directory to Python path
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# Get the parent directory (the directory containing the project)
+parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, parent_dir)
 
-# Import create_app from __init__.py
-from __init__ import create_app
+# Get the project name (directory name)
+project_name = os.path.basename(os.path.dirname(os.path.abspath(__file__)))
 
-application = create_app()
+# Import create_app as a module
+module = __import__(project_name)
+application = module.create_app()

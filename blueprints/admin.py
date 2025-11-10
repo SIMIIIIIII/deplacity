@@ -1,6 +1,6 @@
 import os
 from flask import (Blueprint, render_template, redirect, url_for, request)
-from deplacity.models.city import get_city_list, City, search_by_postal_code
+from ..models.city import get_city_list, City, search_by_postal_code
 from dotenv import load_dotenv
 
 load_dotenv()

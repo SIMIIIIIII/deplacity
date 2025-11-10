@@ -1,7 +1,7 @@
 from flask import (Blueprint, render_template)
-from deplacity.models.statistique import (
+from ..models.statistique import (
     get_number_of_rue,top_ville_cyclabe, entrees)
-from deplacity.models.city import get_city_list
+from ..models.city import get_city_list
 
 bp = Blueprint('statistique', __name__)
 

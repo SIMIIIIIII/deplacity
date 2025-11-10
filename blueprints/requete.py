@@ -1,9 +1,9 @@
 from flask import (
     Blueprint, render_template, request, session, redirect, url_for
 )
-from deplacity.models.city import get_city_list, get_street, get_years, get_months
-from deplacity.models.requete import search_trafic_city, get_traffic_by_street
-from deplacity.models.full_moon_ratio import get_velo_full_moon
+from ..models.city import get_city_list, get_street, get_years, get_months
+from ..models.requete import search_trafic_city, get_traffic_by_street
+from ..models.full_moon_ratio import get_velo_full_moon
 
 bp = Blueprint('requete', __name__)
 

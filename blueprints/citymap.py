@@ -1,7 +1,7 @@
 from flask import (
     Blueprint, render_template, redirect, url_for, request)
 import json
-from deplacity.models.requete import search_trafic_city
+from ..models.requete import search_trafic_city
 
 coordonnee = {
     "Bruxelles": [50.8503, 4.3517],

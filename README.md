@@ -2,6 +2,8 @@
 
 A Flask web application for analyzing traffic and mobility data in Belgian cities.
 
+**🌐 Live Demo:** [https://web-production-37f78.up.railway.app/](https://web-production-37f78.up.railway.app/)
+
 ## Project Structure
 
 ```
@@ -132,6 +134,30 @@ Using Gunicorn (recommended for production):
 cd deplacity
 gunicorn --workers 3 --bind 0.0.0.0:8000 "deplacity.wsgi:application"
 ```
+
+## Deployment
+
+This application is deployed on **Railway** at: [https://web-production-37f78.up.railway.app/](https://web-production-37f78.up.railway.app/)
+
+### Railway Deployment Configuration
+
+The project includes Railway-specific configuration files:
+
+- `railway.json` - Railway deployment settings
+- `nixpacks.toml` - Build configuration using Nixpacks
+- `Procfile` - Process definition for web service
+- `wsgi.py` - Production WSGI entry point
+
+**Environment Variables (set in Railway dashboard):**
+- `DATABASE_URL` - PostgreSQL connection string (auto-set by Railway)
+- `SECRET_KEY` - Flask secret key for sessions
+- `ADMIN_USERNAME` - Admin panel username
+- `ADMIN_PASSWORD` - Admin panel password
+- `FLASK_ENV=production`
+- `PORT` - Port number (auto-set by Railway)
+
+**Database:**
+The production deployment uses **PostgreSQL** (not SQLite). Railway automatically provisions and connects the database.
 
 ## Features
 

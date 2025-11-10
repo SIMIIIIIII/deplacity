@@ -1,10 +1,10 @@
-from __future__ import absolute_import
-import sys
 import os
+import sys
 
-parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, parent_dir)
+# Add the current directory to Python path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-import deplacity
+# Import create_app from __init__.py
+from __init__ import create_app
 
-application = deplacity.create_app()
+application = create_app()
